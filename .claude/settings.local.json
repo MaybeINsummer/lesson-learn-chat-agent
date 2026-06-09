@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Recurse -Depth 3 -Name)",
+      "Bash(Select-Object -First 100)",
+      "Bash(Get-ChildItem -Recurse -File)",
+      "Bash(Select-Object Name, Length, FullName)",
+      "PowerShell($items = @\\(\"vector_db\", \"venv\", \".venv\", \"requirements.txt\", \".env\", \".gitignore\"\\); foreach \\($item in $items\\) { $path = Join-Path $PWD $item; Write-Host \"$item : $\\(if \\(Test-Path $path\\) { '存在' } else { '不存在' }\\)\" })",
+      "PowerShell(pip *)",
+      "PowerShell(python -m venv venv)",
+      "PowerShell(.\\\\venv\\\\Scripts\\\\python.exe -m pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple)",
+      "PowerShell(.\\\\venv\\\\Scripts\\\\python.exe test_imports.py)",
+      "PowerShell(.\\\\venv\\\\Scripts\\\\python.exe -c \"from langchain_text_splitters import RecursiveCharacterTextSplitter; print\\('langchain_text_splitters: OK'\\)\")",
+      "PowerShell(.\\\\venv\\\\Scripts\\\\python.exe main.py)",
+      "PowerShell(.\\\\venv\\\\Scripts\\\\python.exe -m pip install pymupdf -i https://pypi.tuna.tsinghua.edu.cn/simple 2>&1 | Select-Object -Last 5)",
+      "PowerShell(.\\\\venv\\\\Scripts\\\\python.exe -m pip install pytesseract pdf2image -i https://pypi.tuna.tsinghua.edu.cn/simple 2>&1 | Select-Object -Last 5)",
+      "PowerShell(.\\\\venv\\\\Scripts\\\\python.exe -m pip install easyocr -i https://pypi.tuna.tsinghua.edu.cn/simple 2>&1 | Select-Object -Last 5)",
+      "PowerShell(winget install *)",
+      "PowerShell(.\\\\venv\\\\Scripts\\\\python.exe -m pip install paddlepaddle paddleocr -i https://pypi.tuna.tsinghua.edu.cn/simple 2>&1 | Select-Object -Last 5)",
+      "PowerShell($url = \"https://github.com/UB-Mannheim/tesseract/releases/download/v5.5.1.20250518/tesseract-ocr-w64-setup-5.5.1.20250518.exe\"; $output = \"$env:TEMP\\\\tesseract-installer.exe\"; Invoke-WebRequest -Uri $url -OutFile $output -UseBasicParsing; Write-Host \"Downloaded to: $output\")"
+    ]
+  }
+}

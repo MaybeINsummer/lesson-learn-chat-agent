@@ -1,0 +1,17 @@
+# PDF 文档加载 & OCR
+langchain>=0.3.0
+langchain-community>=0.3.0
+langchain-openai>=0.3.0
+langchain-classic>=1.0.0
+pymupdf>=1.27.0
+easyocr>=1.7.0
+
+# 向量嵌入 & 向量库
+sentence-transformers>=3.0.0
+faiss-cpu>=1.9.0
+
+# 对话界面
+gradio>=5.0.0
+
+# 环境变量管理
+python-dotenv>=1.0.0
